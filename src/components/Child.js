@@ -7,7 +7,7 @@ const Child = ({list, onclick}) => {
         <ul>
             {list.map(l=>{
             return(
-                <li key={l.id}><span>{l.item}-{l.price}</span><button onClick={()=>onclick(l.id)}>Remove</button></li>
+                <li key={l.id}><span>{l.item} - {l.price}</span><button onClick={()=>onclick(l.id)}>Remove</button></li>
             )
         })}
         </ul>

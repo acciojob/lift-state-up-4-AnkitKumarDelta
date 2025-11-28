@@ -8,17 +8,17 @@ const App = () => {
   const[cartItems, setCartItems] = useState([
     {
       id:id.current++,
-      item:"Item1",
+      item:"Item 1",
       price:"$10",
     },
     {
       id:id.current++,
-      item:"Item2",
+      item:"Item 2",
       price:"$20",
     },
     {
       id:id.current++,
-      item:"Item3",
+      item:"Item 3",
       price:"$30",
     }
   ]);
@@ -32,18 +32,18 @@ const App = () => {
   }
 
   function handleCart(a,b){
-    let newcart = [...cartItems,{id:id.current++,item:a,price:b}];
+    let newcart = [...cartItems,{id:id.current++,item:a.trim(),price:`$${b}`}];
     setCartItems(newcart);
   }
   return (
     <div className="parent">
       <h1>Parent Component</h1>
         <label htmlFor="itemName">
-          Item Name
+          Item Name:
           <input id="itemName" type="text" value={item} onChange={(e)=>setItem(e.target.value)}/>
         </label>
         <label htmlFor="itemPrice">
-          Item Price
+          Item Price:
           <input id="itemPrice" type="number" value={price} onChange={(e)=>setPrice(e.target.value)}/>
         </label>
         <button onClick={()=>handleCart(item,price)}>Add Item</button>
